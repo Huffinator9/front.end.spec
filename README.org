@@ -1,7 +1,11 @@
-* Task Management Features:
+* Task Management App Features:
 
 ** Task Dashboard Page:
-   - Implement a dashboard interface for managing tasks, including features like task lists, creation, editing, and deletion.
+   - Implement a dashboard interface for managing tasks
+      - task lists
+      - creation
+      - editing
+      - deletion
 
 ** Task Details Display:
   - Design a detailed view for individual tasks, displaying task information and allowing users to modify task details.
