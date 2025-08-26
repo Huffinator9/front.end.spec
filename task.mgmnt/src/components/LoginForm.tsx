@@ -1,0 +1,57 @@
+// src: src/components/LoginForm.tsx
+
+import React, { useState } from "react";
+import { useAuth } from "../context/AuthContext";
+
+const LoginForm: React.FC = () => {
+  const { login } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const VALID_EMAIL = "admin@nwt.com";
+  const VALID_PASSWORD = "pass123!"
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (email === VALID_EMAIL && password === VALID_PASSWORD) {
+      login(email);
+      setError("");
+      } else {
+        setError("Invalid email or password");
+      }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto mt-10 p-4 border rounded"
+    >
+      <h2 className="text-2xl font-bold mb-4">Login</h2>
+      {error && <p className="text-red-500 mb-2">{error}</p>}
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="border p-2 mb-2 w-full rounded"
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="border p-2 mb-4 w-full rounded"
+      />
+      <button
+        type="submit"
+        className="bg-blue-500 text-white px-4 py-2 rounded w-full"
+      >
+        Login
+      </button>
+    </form>
+  );
+};
+
+export default LoginForm;
