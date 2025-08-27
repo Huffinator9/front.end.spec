@@ -32,14 +32,14 @@ function AddProduct() {
       });
 
       if (response.status === 200 || response.status === 201) {
-        setSuccessMessage('✅ Product created successfully!');
+        setSuccessMessage('Product created successfully!');
         setFormData({ title: '', price: '', description: '', category: '' });
       } else {
-        setError('❌ Something went wrong.');
+        setError('Something went wrong.');
       }
     } catch (err) {
       console.error(err);
-      setError('❌ Failed to create product.');
+      setError('Failed to create product.');
     } finally {
       setSubmitting(false);
     }

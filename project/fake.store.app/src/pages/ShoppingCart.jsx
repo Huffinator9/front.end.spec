@@ -5,7 +5,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { removeFromCart, clearCart } from '../store/cartSlice';
 
 function ShoppingCart() {
-  const items = useSelector((state) => state.cart.items); // cart array from Redux
+  const items = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
   // total items
@@ -17,7 +17,7 @@ function ShoppingCart() {
     .toFixed(2);
 
   const handleCheckout = () => {
-    alert('Checkout successful! 🎉 Your cart has been cleared.');
+    alert('Checkout successful! Your cart has been cleared.');
     dispatch(clearCart());
     sessionStorage.removeItem('cart');
   };

@@ -2,13 +2,12 @@
 
 import { createSlice } from '@reduxjs/toolkit';
 
-// Load cart from sessionStorage
 const initialCart = JSON.parse(sessionStorage.getItem('cart')) || [];
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    items: initialCart, // array of {id, title, image, price, quantity}
+    items: initialCart,
   },
   reducers: {
     addToCart: (state, action) => {

@@ -5,7 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Container, Row, Col, Card, Spinner, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../store/cartSlice';   // ⬅️ import your cartSlice action
+import { addToCart } from '../store/cartSlice';
 
 // Fetch categories
 const fetchCategories = async () => {
@@ -25,7 +25,7 @@ const fetchProducts = async (category) => {
 
 function ProductList() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const dispatch = useDispatch();  // ⬅️ hook into Redux
+  const dispatch = useDispatch();
 
   // Load categories
   const { data: categories = [], isLoading: loadingCategories } = useQuery({
