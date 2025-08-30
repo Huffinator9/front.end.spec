@@ -5,7 +5,7 @@ Product Listing and Display
 Use React Query to retrieve all of the products in the store and display them on the Home component.
 Show the title, price, category, description, rate, and image for each product.
 Each product should have a button that allows the user to add it to the shopping cart.
-⚠️ Note on Images:
+Note on Images:
 Some image URLs provided by the FakeStore API currently return 404 errors. This is an API-side issue (the image files were removed or rotated), not a problem with your code. To handle this gracefully, implement a fallback so that if an image fails to load, a placeholder (for example, from https://via.placeholder.com) is displayed. This ensures the UI still looks consistent and usable.
 Category Navigation
 Provide a select dropdown that allows users to select a product category.
